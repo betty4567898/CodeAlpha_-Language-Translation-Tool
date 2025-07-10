@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Translation Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-language"></i> Language Translation Tool</h1>
+            <p>Translate text between different languages instantly</p>
+        </header>
+
+        <main>
+            <div class="translation-container">
+                <div class="input-section">
+                    <div class="language-selector">
+                        <label for="source-lang">From:</label>
+                        <select id="source-lang">
+                            <option value="auto">Auto-detect</option>
+                        </select>
+                    </div>
+                    
+                    <div class="text-area-container">
+                        <textarea 
+                            id="source-text" 
+                            placeholder="Enter text to translate..."
+                            maxlength="5000"
+                        ></textarea>
+                        <div class="char-count">
+                            <span id="char-count">0</span>/5000
+                        </div>
+                        <button id="clear-btn" class="clear-btn" title="Clear text">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="swap-container">
+                    <button id="swap-btn" class="swap-btn" title="Swap languages">
+                        <i class="fas fa-exchange-alt"></i>
+                    </button>
+                </div>
+
+                <div class="output-section">
+                    <div class="language-selector">
+                        <label for="target-lang">To:</label>
+                        <select id="target-lang">
+                            <option value="">Select target language</option>
+                        </select>
+                    </div>
+                    
+                    <div class="text-area-container">
+                        <textarea 
+                            id="target-text" 
+                            placeholder="Translation will appear here..."
+                            readonly
+                        ></textarea>
+                        <div class="action-buttons">
+                            <button id="copy-btn" class="action-btn" title="Copy translation">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                            <button id="speak-btn" class="action-btn" title="Speak translation">
+                                <i class="fas fa-volume-up"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="translate-btn" class="translate-btn">
+                    <i class="fas fa-language"></i>
+                    Translate
+                </button>
+                <button id="detect-btn" class="detect-btn">
+                    <i class="fas fa-search"></i>
+                    Detect Language
+                </button>
+            </div>
+
+            <div id="result-info" class="result-info hidden">
+                <div class="detection-result">
+                    <span id="detection-text"></span>
+                </div>
+            </div>
+
+            <div id="loading" class="loading hidden">
+                <i class="fas fa-spinner fa-spin"></i>
+                <span>Translating...</span>
+            </div>
+
+            <div id="error-message" class="error-message hidden">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span id="error-text"></span>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Language Translation Tool. Built with Google Translate API.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
